@@ -15,18 +15,33 @@ public class ParsingWeatherData {
                 double lowestTemp = Double.parseDouble(lowestSoFar.get("TemperatureF"));
                 if(currentTemp < lowestTemp) {
                     lowestSoFar = currentRow;
-                    
                 }
             }
         }
         return lowestSoFar;
     }
     
-    public void testColdestInDay() {
+    public void testColdestHourInFile() {
         FileResource fr = new FileResource("data/2015/weather-2015-01-01.csv");
         CSVRecord lowest = coldestHourInFile(fr.getCSVParser());
-        System.out.println(
-            "Coldest temperature was " + lowest.get("TemperatureF") + " at " + lowest.get("TimeEST"));
+        // System.out.println("Coldest temperature was " + lowest.get("TemperatureF") + " at " + lowest.get("TimeEST"));
+        System.out.println("Record for hour with the coldest temperature:\n" + lowest);
+    }
+    
+    public String fileWithColdestTemperature() {
+        // TODO:
+        return "";
+    }
+    
+    public void testFileWithColdestTemperature() {
+    }
+    
+    public CSVParser lowestHumidityInFile(CSVParser parser) {
+        // Print lowest humidity and time of lowest humidity.
+        // TODO
+        CSVParser testParser = parser;
+        // TODO
+        return parser;
     }
     
 }
